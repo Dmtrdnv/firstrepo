@@ -1,0 +1,47 @@
+Зайти в домашнюю директорию 
+$ cd /
+Создать папку test 3 
+$ mkdir test3
+Добавить в папку test 3 три файла 4, 5 и 6, в каждом из которых должно быть по 4 строки row1, row2, row3, row4 
+$ cd test3
+$ touch {4..6}.txt
+$ echo -e row{1..4}"\n" > 4.txt
+$ echo -e row{1..4}"\n" > 5.txt
+$ echo -e row{1..4}"\n" > 6.txt
+Найдите строку row2 в файле 5
+$ grep -i "row2" 5.txt
+ row2
+Найдите строку row в папке test3 
+$ grep -R "row2"
+Посчитайте сколько строк с содержимым row в файле 6
+$ grep -c "row" 6.txt
+4
+Найдите файл 5 внутри папки test3
+$ find "5.txt"
+Используя команду find, удалите файл 5
+$ find . -name "5.txt" -delete -print
+./5.txt
+Используя команду echo, добавьте слово test в файл 4
+$ echo "test" >> 4.txt
+Замените слово test в файле 4 на fail
+$ grep -rl "test" 4.txt | xargs sed -i "s/test/fail/g"
+Добавьте в файл 4 слово test так, чтобы сохранилось содержимое
+$ echo "test" >> 4.txt
+Просмотрите все процессы для юзеров не только в консоли, которые происходят в системе
+$ ps aux
+Убейте процесс 666 в консоли
+$ kill 666
+Узнайте доступность ресурса artsiomrusau.com, используя ping 
+$ ping artsiomrusau.com
+Отправьте 5 пакетов на сайт artsiomrusau.com
+$ ping -c 5 artsiomrusau.com
+Используя GET и команду curl, получите информацию о зарегистрированных питомцах на https://petstore.swagger.io/
+$ curl https://petstore.swagger.io/v2/store/inventory
+Используя POST и команду curl, создайте нового пользователя на https://petstore.swagger.io/
+$ curl -X POST -H 'Content-Type: application/json' https://petstore.swagger.io/v2/user -d '{"id":692023,"username":"692023","firstName":"692023","lastName":"692023","email":"62023@69.2023","password":"692023","phone":"692023","userStatus":1}'
+
+$ curl -X POST -H 'Content-Type: application/json' https://petstore.swagger.io/v2/user -d '{"id":692023,"username":"692023","firstName":"Jessa","lastName":"Bibbbbi","email":"692023@bob.com","password":"692023", "phone":"692023","userStatus":1}'
+
+
+
+
